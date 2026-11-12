@@ -1,4 +1,4 @@
-# From First to Second Purchase
+# From First to Second Valid Invoice
 
 **Status:** Work in progress 
 
@@ -32,7 +32,7 @@ These preliminary results were not used to calculate the final second valid invo
 
 ### Valid Purchase Classification
 
-I created another query to investigate which conditions a transaction line should meet to count as evidence of a paid product purchase.
+I created another query to investigate which conditions a transaction line should meet to count as evidence of a valid purchase-related transaction.
 
 I established some conditions: the `InvoiceNo` must not start with `C`, `Quantity` and `UnitPrice` must be greater than zero, and `StockCode` must not equal special codes such as `D`, `POST`, `C2`, `DOT` or `M`.
 
@@ -61,9 +61,17 @@ Each rate uses its own eligible customer population.
 
 I created a first version of the dashboard in Excel to present the number of customers with a second valid invoice, the 60-day rate, and the distribution of time between the first and second valid invoices.
 
-The dashboard is still being developed.
-
 The detailed, provisional criteria and case checks are in [Business Rules v0.1](docs/business_rules_v0.1.md).
+
+## Business Findings and Implications
+
+The analysis shows that 37.28% of the 3,729 eligible customers had a second valid invoice within 60 days of their first valid invoice.
+
+Among the 2,830 customers with an observed second valid invoice, the median time between their first and second valid invoices was approximately 51 days.
+
+The time intervals varied considerably, and the dashboard groups them into ranges with different durations. Therefore, the customer counts should not be interpreted as directly comparable rates.
+
+These findings provide a starting point for understanding repeat purchasing behavior, but they do not explain why customers returned or did not return.
 
 ## Limitations and Next Steps
 
@@ -73,13 +81,26 @@ These decisions and limitations are documented in [Business Rules v0.1](docs/bus
 
 The project is still in progress. The remaining tasks include:
 
-- Finalizing the Excel dashboard.
 - Writing business conclusions and recommendations.
-- Performing an additional Excel formula validation.
-- Preparing the workbook and instructions for reproducibility.
+- Publishing the workbook and dashboard screenshot.
 - Completing the final project review.
-
 
 ## Reproducing the Analysis
 
-The original data is available from UCI at the link above. The Power Query workbook will be added separately; when it is available, its local source-file path may need to be updated before refreshing the queries. The raw dataset is not included here.
+The original Online Retail dataset is available from the UCI Machine Learning Repository. The raw dataset is not included in this repository.
+
+To reproduce the analysis:
+
+1. Download the original Online Retail dataset from UCI.
+2. Open `Online_Retail_Analysis.xlsx` in Microsoft Excel with Power Query.
+3. Open the Power Query Editor and locate `Online_Retail_Raw` and `Raw_Row_Count`.
+4. In both queries, select the `Source` step and update the path inside `File.Contents()` to point to the downloaded dataset. The source workbook should contain a worksheet named `Online Retail` with the original eight columns.
+5. Select **Close & Load**, then **Data → Refresh All**.
+
+After refreshing, verify the main results:
+
+- Original records: 541,909.
+- Customers with an observed second valid invoice: 2,830.
+- 60-day second valid invoice rate: **37.28%**.
+
+**Reproducibility note:** I tested the workbook on a second computer by updating both source paths. The main results remained consistent, although one exploratory query reported an incomplete load.
