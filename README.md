@@ -83,12 +83,14 @@ These decisions and limitations are documented in [Business Rules v0.1](docs/bus
 
 ## Reproducing the Analysis
 
+**Download the workbook:** [Online_Retail_Analysis_Public.xlsx (v1.0)](https://github.com/mbonalesr/online-retail-repeat-purchase-analysis/releases/download/v1.0/Online_Retail_Analysis_Public.xlsx)
+
 The original Online Retail dataset is available from the UCI Machine Learning Repository. The raw dataset is not included in this repository.
 
 To reproduce the analysis:
 
 1. Download the original Online Retail dataset from UCI.
-2. Open `Online_Retail_Analysis.xlsx` in Microsoft Excel with Power Query.
+2. Open `Online_Retail_Analysis_Public.xlsx` in Microsoft Excel with Power Query.
 3. Open the Power Query Editor and locate `Online_Retail_Raw` and `Raw_Row_Count`.
 4. In both queries, select the `Source` step and update the path inside `File.Contents()` to point to the downloaded dataset. The source workbook should contain a worksheet named `Online Retail` with the original eight columns.
 5. Select **Close & Load**, then **Data → Refresh All**.
