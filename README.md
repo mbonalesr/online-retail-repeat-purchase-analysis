@@ -10,6 +10,10 @@ We found that 37.28% of the 3,729 eligible customers had a second valid invoice 
 
 A possible next step is to compare the products purchased and the amount spent on the first valid invoice between eligible customers who had a second valid invoice within 60 days and those who did not. This could help the business better understand differences between these groups and plan future retention strategies.
 
+## Dashboard
+
+![Repeat Purchase Dashboard](repeat_purchase_dashboard.png)
+
 ## Business Problem
 
 An online retail business has records of customer sales and invoices. However, knowing the total number of invoices does not show what proportion of customers register a second valid invoice.
