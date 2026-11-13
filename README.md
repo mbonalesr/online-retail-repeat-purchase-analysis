@@ -1,22 +1,30 @@
 # From First to Second Valid Invoice
 
-**Status:** Work in progress 
+## Executive Summary
 
-**First checkpoint:** October 23, 2026 (about 15 hours of work)
+We wanted to find out the proportion of customers who registered a second valid invoice within a 60-day window.
 
-**Second checkpoint:** November 3, 2026 (approximately 30 hours of work)
+We did this by first identifying valid invoices and then checking which customers had at least 60 days of observation available in the dataset.
 
-**Tools used so far:** Excel, Power Query, and Pivot Tables
+We found that 37.28% of the 3,729 eligible customers had a second valid invoice within 60 days.
+
+A possible next step is to compare the products purchased and the amount spent on the first valid invoice between eligible customers who had a second valid invoice within 60 days and those who did not. This could help the business better understand differences between these groups and plan future retention strategies.
+
+## Business Problem
+
+An online retail business has records of customer sales and invoices. However, knowing the total number of invoices does not show what proportion of customers register a second valid invoice.
+
+The goal of this analysis is to measure that proportion within a defined observation window and examine the time between customers' first and second valid invoices.
 
 ## Project Overview
 
 This project analyzes transaction data from an online retail store in the United Kingdom, recorded between late 2010 and late 2011.
 
-The goal is to identify how many customers had a second valid invoice and how much time passed between their first and second valid invoices.
-
 **Data source:** [UCI Machine Learning Repository — Online Retail](https://archive.ics.uci.edu/dataset/352/online+retail). Prices are recorded in GBP.
 
-## What I've Done So Far
+**Tools used:** Excel, Power Query, and Pivot Tables
+
+## Data Preparation and Methodology
 
 ### Data Preparation
 
