@@ -28,6 +28,35 @@ This project analyzes transaction data from an online retail store in the United
 
 **Tools used:** Excel, Power Query, and Pivot Tables
 
+## Key Results
+
+| Observation Window | Eligible Customers | Customers with Second Valid Invoice | Rate |
+|---|---:|---:|---:|
+| 30 days | 4,067 | 891 | 21.91% |
+| 60 days | 3,729 | 1,390 | 37.28% |
+| 90 days | 3,369 | 1,593 | 47.28% |
+
+I selected the 60-day rate as the main KPI. The 30-day and 90-day rates provide additional context about how the results change across observation windows.
+Each rate uses its own eligible customer population.
+
+## Business Findings and Recommendations
+
+### Key Findings
+
+The analysis shows that 37.28% of the 3,729 eligible customers had a second valid invoice within 60 days of their first valid invoice.
+
+For the 2,830 customers who had a second valid invoice, the median time between their first and second invoices was about 51 days.
+
+The time between invoices was different across customers. Also, the dashboard shows time ranges of different lengths, so the number of customers in each range should not be compared as if they were rates.
+
+### Recommendations
+
+A next step could be to compare customers who had a second valid invoice within 60 days with those who did not.
+
+We could look at the products they bought and how much they spent on their first valid invoice to see if there are any differences between these groups. This information could help the business plan future customer retention strategies.
+
+However, this analysis does not explain why customers returned or show whether a retention campaign would work.
+
 ## Data Preparation and Methodology
 
 ### Data Preparation
@@ -50,7 +79,7 @@ I established some conditions: the `InvoiceNo` must not start with `C`, `Quantit
 
 I created a column called `Valid_Line` to classify these records as `Yes` or `No`. After grouping and counting the results, I obtained **396,352 lines classified as `Yes`** and **10,477 as `No`**. I also checked examples involving cancellations, zero-priced products, and an invoice containing both paid products and a shipping charge.
 
-### Valid Invoices and Second Purchase Analysis
+### Valid Invoices and Second Invoice Analysis
 
 After applying my classification rules, I identified 18,413 valid invoices and 4,335 customers with at least one valid invoice.
 
@@ -58,44 +87,11 @@ Of these customers, 2,830 had an observed second valid invoice during the datase
 
 To calculate the second valid invoice rates, I used observation windows of 30, 60, and 90 days. Only customers with enough observation time were included in each window.
 
-### Key Results
-
-| Observation Window | Eligible Customers | Customers with Second Valid Invoice | Rate |
-|---|---:|---:|---:|
-| 30 days | 4,067 | 891 | 21.91% |
-| 60 days | 3,729 | 1,390 | 37.28% |
-| 90 days | 3,369 | 1,593 | 47.28% |
-
-I selected the 60-day rate as the main KPI. The 30-day and 90-day rates provide additional context about how the results change across observation windows.
-Each rate uses its own eligible customer population.
-
-### Dashboard Progress
-
-I created a first version of the dashboard in Excel to present the number of customers with a second valid invoice, the 60-day rate, and the distribution of time between the first and second valid invoices.
-
-The detailed, provisional criteria and case checks are in [Business Rules v0.1](docs/business_rules_v0.1.md).
-
-## Business Findings and Implications
-
-The analysis shows that 37.28% of the 3,729 eligible customers had a second valid invoice within 60 days of their first valid invoice.
-
-Among the 2,830 customers with an observed second valid invoice, the median time between their first and second valid invoices was approximately 51 days.
-
-The time intervals varied considerably, and the dashboard groups them into ranges with different durations. Therefore, the customer counts should not be interpreted as directly comparable rates.
-
-These findings provide a starting point for understanding repeat purchasing behavior, but they do not explain why customers returned or did not return.
-
-## Limitations and Next Steps
+## Limitations and Assumptions
 
 The analysis has some methodological limitations, including short intervals between valid invoices, customers without valid invoices, and differences in observation time.
 
 These decisions and limitations are documented in [Business Rules v0.1](docs/business_rules_v0.1.md).
-
-The project is still in progress. The remaining tasks include:
-
-- Writing business conclusions and recommendations.
-- Publishing the workbook and dashboard screenshot.
-- Completing the final project review.
 
 ## Reproducing the Analysis
 
