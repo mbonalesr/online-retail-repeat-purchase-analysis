@@ -2,13 +2,7 @@
 
 ## Executive Summary
 
-We wanted to find out the proportion of customers who registered a second valid invoice within a 60-day window.
-
-We did this by first identifying valid invoices and then checking which customers had at least 60 days of observation available in the dataset.
-
-We found that 37.28% of the 3,729 eligible customers had a second valid invoice within 60 days.
-
-A possible next step is to compare the products purchased and the amount spent on the first valid invoice between eligible customers who had a second valid invoice within 60 days and those who did not. This could help the business better understand differences between these groups and plan future retention strategies.
+We wanted to find out the proportion of customers who registered a second valid invoice within a 60-day window. We did this by first identifying valid invoices and then checking which customers had at least 60 days of observation available in the dataset. We found that **37.28% of the 3,729 eligible customers** had a second valid invoice within 60 days. A possible next step is to compare the products purchased and the amount spent on the first valid invoice between eligible customers who had a second valid invoice within 60 days and those who did not. This could help the business better understand differences between these groups and plan future retention strategies.
 
 ## Dashboard
 
@@ -16,9 +10,7 @@ A possible next step is to compare the products purchased and the amount spent o
 
 ## Business Problem
 
-An online retail business has records of customer sales and invoices. However, knowing the total number of invoices does not show what proportion of customers register a second valid invoice.
-
-The goal of this analysis is to measure that proportion within a defined observation window and examine the time between customers' first and second valid invoices.
+An online retail business has records of customer sales and invoices. However, knowing the total number of invoices does not show what proportion of customers register a second valid invoice. The goal of this analysis is to measure that proportion within a defined observation window and examine the time between customers' first and second valid invoices.
 
 ## Project Overview
 
@@ -65,11 +57,7 @@ I downloaded the original Online Retail dataset, which contained **541,909 trans
 
 ### Exploratory Data Analysis
 
-I initially explored time intervals between consecutive invoices using indexed queries, a left join in Power Query, and pivot tables.
-
-This preliminary analysis helped me identify potential data-quality issues, including cancellations and invoices recorded within short time intervals.
-
-These preliminary results were not used to calculate the final second valid invoice rates.
+I initially explored time intervals between consecutive invoices using indexed queries, a left join in Power Query, and pivot tables. This preliminary analysis helped me identify potential data-quality issues, including cancellations and invoices recorded within short time intervals. These preliminary results were not used to calculate the final second valid invoice rates.
 
 ### Valid Purchase Classification
 
